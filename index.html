@@ -10,35 +10,33 @@
         <title>science in sound | home </title>
         <meta name="Homepage for Colin Scruggs' thesis project" content=":)">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
         
         <!--CSS styling-->
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/contentStyle.css">
         
         <!--Fonts and misc. scripts-->
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Karla:400,700,400italic' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-        <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Karla:400' rel='stylesheet' type='text/css'>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+        
     </head>
     <body>
 
-        <section class="window">
+        <section><!--class="window"--> 
             <div class="halfWindow lw" id="left">
                 <div id="leftContent">
-                    <a href="index.html"><img src="img/logo.png" /></a>
+                    <a href="index.html"><img src="img/logo.png" style="cursor: pointer" id="logo" /></a>
                     <ul id="menu">
                         <li>
                             <a id="change" onclick="openMenu()">show topics</a>
                             <ul id="topics">
-                                <a onclick="loadPage(1)"><li>what is sound? <b>1.0</b></li></a>
-                                <a onclick="loadPage(2)"><li>noise and music:<br>what's the difference?<b>2.0</b></li></a>
-                                <a onclick="loadPage(3)"><li>how is music recorded? <b>3.0</b></li></a>
-                                <a onclick="loadPage(4)"><li>how is audio reproduced? <b>4.0</b></li></a>
-                                <a onclick="loadPage(5)"><li>how does hearing work? <b>5.0</b></li></a>
+                                <a onclick="loadPage(1)"><li>what is sound? </li></a>
+                                <a onclick="loadPage(2)"><li>understanding the frequency spectrum</li></a>
+                                <a onclick="loadPage(3)"><li>noise and music:<br>what's the difference?</li></a>
+                                <a onclick="loadPage(4)"><li>speakers and microphones</li></a>
                         </ul></li>
                         <li><a onclick="loadPage(0)">about</a></li>
                     </ul>
@@ -55,7 +53,7 @@
                             <li>sound</li>
                         </ul>
                         <p id="desc">Discover the science behind <br>the world of sound and music.
-                        <div class="button" onclick="loadPage(1)"><span>BEGIN LEARNING</span></div>
+                        <div class="button red" onclick="loadPage(6)" style ="left: 43px"><span>BEGIN LEARNING</span></div>
                         </div>
                     </div>
                 </div>
@@ -67,12 +65,8 @@
 <!---------JS SCRIPTS--------->
         
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-        
-        <script src="js/vendor/bootstrap.min.js"></script>
-        <script src="js/jquery.windows.js"></script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/vendor/bootstrap.min.js"></script>
+      <script type="text/javascript" src="js/main.js"></script>
+      <script type="text/javascript" src="js/plugins.js"></script>
     </body>
 </html>

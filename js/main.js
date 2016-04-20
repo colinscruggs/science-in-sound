@@ -1,65 +1,54 @@
-var hasClickedMenu = new Boolean(false);
+var hasOpenedContent = new Boolean(false);
 var element = document.getElementById("change");
-
-/*-----LIST MENU-----*/
-
-/*$("#menu > li a").click(function() {
-    $("#change").parent().find('ul').slideToggle(1000);
-}); */
-
-function openMenu() {
-    
-    if(hasClickedMenu == true) {
-        $("#menu").animate({
-            'top': '0px'
-        },1000);
-        hasClickedMenu = false; 
-        element.innerHTML = "show topics";
-        
-    }
-    
-    else {
-        $("#menu").animate({'top': '-140px'}, 1000);
-        hasClickedMenu = true;
-        element.innerHTML = "hide topics";
-    }
-    
-    $("#change").parent().find('ul').slideToggle(1000);
-}
-
-/*-----LOAD PAGES-----*/
-
 var pages = [
     "about.html",
     "topic1.html",
     "topic2.html",
     "topic3.html",
     "topic4.html",
-    "topic5.html"
-];
+    "topic5.html",
+    "introduction.html"];
 
-var hasOpenedContent = new Boolean(false);
+/*-----LIST MENU-----*/
+
+function openMenu() {
+    var menuStatus = document.getElementById("change").innerHTML;
+    if (menuStatus == "hide topics") {
+        $("#menu").animate({
+            'top': '0px'
+        }, 1000);
+        element.innerHTML = "show topics";
+        $("#change").parent().find('ul').slideToggle(1000);
+    } else {
+        $("#menu").animate({
+            'top': '-140px'
+        }, 1000);
+        element.innerHTML = "hide topics";
+        $("#change").parent().find('ul').slideToggle(1000);
+    }
+}
+
+/*-----LOAD PAGES-----*/
 
 function loadPage(page) {
-        
-    $( "#content" ).fadeOut(1000);
-    $( "#bodyContent ").hide();
-    $( ".intro").hide();
-    
-    if(hasOpenedContent == false) {
-        
-        if(page !== 0) {
-            $( "#left" ).removeClass( "lw" ).addClass( "lw-nav" );
-            $( "#right" ).removeClass( "rw" ).addClass ("rw-nav" );
-            hasOpenedContent == true;
+    $("#content").fadeOut(500);
+    $(".intro").hide();
+
+    setTimeout(function () {
+        $("#content").load(pages[page]);
+    }, 500);
+
+    $("#content").fadeIn(500);
+    $("html, body").animate({
+        scrollTop: 0
+    }, 1000);
+
+    if (hasOpenedContent == false) {
+
+        if (page !== 0) {
+            $("#left").removeClass("lw").addClass("lw-nav");
+            $("#right").removeClass("rw").addClass("rw-nav");
+            hasOpenedContent = true;
         }
     }
-    
-    setTimeout(function(){
-        $( "#content" ).load(pages[page]);
-        if(hasClickedMenu == true) { openMenu(); };
-    }, 1000); 
-
-    $( "#content" ).fadeIn(1000);
-    
 }
